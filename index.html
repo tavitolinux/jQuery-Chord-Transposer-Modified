@@ -1,40 +1,83 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>jQuery Chord Transposer</title>
-  <link rel="stylesheet" type="text/css" href="jquery.transposer.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>A1. A Cristo, sólo a Cristo</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #fff; margin: 0; padding-bottom: 90px; }
+        .song-header { background: #f8fafc; padding: 15px; border-bottom: 1px solid #e2e8f0; text-align: center; }
+        h1.title { margin: 0; font-size: 18px; color: #2563eb; }
+        
+        pre { 
+            font-family: Arial, sans-serif !important; 
+            font-size: 10pt !important; 
+            line-height: 1.2; 
+            white-space: pre; 
+            overflow-x: auto; 
+            padding: 20px; 
+            margin: 0; 
+        }
+
+        /* Estilo para acordes azules y negritas */
+        span.c { 
+            color: #2563eb !important; 
+            font-weight: bold !important; 
+            font-style: normal;
+        }
+        
+        .nav-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #fff; display: flex; justify-content: space-around; padding: 12px; border-top: 1px solid #ddd; z-index: 1000; }
+        .nav-btn { text-decoration: none; color: #444; padding: 10px 15px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px; background: #fdfdfd; }
+        .nav-btn.primary { background: #2563eb; color: white; border: none; }
+        
+        .transpose-controls { position: fixed; right: 15px; top: 70px; display: flex; flex-direction: column; gap: 10px; z-index: 1100; }
+        .transpose-controls button { width: 45px; height: 45px; border-radius: 50%; border: none; background: #2563eb; color: white; font-size: 22px; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        
+        @media (max-width: 600px) {
+            .transpose-controls { top: 80px; right: 10px; flex-direction: row; }
+            .transpose-controls button { width: 40px; height: 40px; font-size: 18px; }
+        }
+    </style>
 </head>
-<body style="margin: 30px">
-  <pre data-key="C">
-       C              G                 Am          F
-When I find myself in times of trouble, Mother Mary comes to me
-C                 G              F   C/E   Dm   C
-Speaking words of wisdom, let it be
+<body>
+    <div class="song-header">
+        <h1 class="title">A1. A Cristo, sólo a Cristo</h1>
+    </div>
 
-    C             G                Am                F
-And in my hour of darkness, She is standing right in front of me
-C                 G              F   C/E   Dm   C
-Speaking words of wisdom, let it be
+    <pre data-key="G">A1. 
+G Bm                 C   
+A Cristo, sólo a Cristo
+Am                D
+       yo adoraré
+G  Bm                  C        
+  A Cristo, sólo a Cristo
+Am                D
+        yo exaltaré
+Am                                               D
+      Porque él me ha dado vida eterna
+Am                                          D
+      Porque él me ha dado el poder
+Am                                              D
+      Porque él me ha dado la victoria
+              G    Bm  Em
+Él es mi Rey(ee   ey)
+    Am          Bm     C    D   G
+A Cristo he procla-ma-do  Rey.</pre>
 
-       Am         G          F          C
-Let it be, let it be, let it be, let it be
-                 G              F   C/E   Dm   C
-Whisper words of wisdom, let it be
-  </pre>
-  
-  <div style="margin-top: 30px; border-top: solid 1px #ddd;padding-top: 15px;font: normal 11px sans-serif">
-  <p>jQuery Chord Transposer plugin v1.0</p>
+    <div class="transpose-controls">
+        <button id="transpose-up">+</button>
+        <button id="transpose-down">-</button>
+    </div>
 
-  <p>&copy;Copyright 2010, Jesse Gavin<br/>
-					Dual licensed under the MIT or GPL Version 2 licenses.</p>
-     </div>
-  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
-  <script type="text/javascript" src="jquery.transposer.js"></script>
-  <script type="text/javascript">
-    $(function() {
-    	$("pre").transpose();
-    });
-  </script>
+    <nav class="nav-bar">
+        <a href="#" class="nav-btn" style="visibility:hidden">Anterior</a>
+        <a href="index.html" class="nav-btn primary">Inicio</a>
+        <a href="cancion_a2.html" class="nav-btn" >Siguiente</a>
+    </nav>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script>$(document).ready(function() { $("pre").transpose(); });</script>
 </body>
 </html>
